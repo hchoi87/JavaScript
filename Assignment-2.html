@@ -6,7 +6,7 @@
     <script>
 //Deal/shuffle suits
  function shuffleSuit(){
-    var digit = Math.round(Math.random() * 4)+1;
+    var digit = Math.floor(Math.random() * 4)+1;
         switch(digit){
             case 0 : return "♠"; break;
             case 1 : return "♥"; break;
@@ -15,7 +15,7 @@
         } return digit;
     }
 function shuffleValue(){
-    var digit = Math.round(Math.random() * 13)+1;
+    var digit = Math.floor(Math.random() * 13)+1;
         switch(digit){
             case 0 : return "A"; break;
             case 1 : return "2"; break;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- HANNA CHOI, Section: TRLM 8638 A -->
+    <title>Assingment01-Hanna</title>
+</head>
+    
+<body>
+    
+    <script>
+        //Asking name
+        var firstName = prompt("What is your first name?");
+        var lastName = prompt("What is your last name?");
+        //Greeting message
+        var greetings = firstName + (" ") + lastName; 
+        alert("Nice to meet you, " + greetings + "!");
+        //asking radius
+        var radius = prompt("Can you give the radius of a circle?");
+        const pi = 3.1415;
+        //circumference
+        var circumference = Math.round(2 * pi * radius);
+        //area of circle
+        var areaCircle = Math.round(pi * Math.pow(radius,2));
+        //surface of sphere
+        var surfaceSphere = Math.round(4 * pi * Math.pow(radius,2));
+        //volume of sphere
+        var volumeSphere = Math.round((3/4) * pi * Math.pow(radius,3));
+        //present answer
+        //document.write("Your circle with a radius of " + radius + " would have a circumference of " + circumference + ", an area of " + areaCircle + ", a surface of " + surfaceSphere + " and a volume of " + volumeSphere + ".");
+        
+        //SQUARE CALCULATION
+        //asking width
+        var width = prompt("Can you give the width of a square?");
+        //circumference
+        var perimeter = Math.round(4*width);
+        //area of square
+        var areaSquare = Math.round(Math.pow(width,2));
+        //surface of cube
+        var surfaceCube = Math.round(6 * Math.pow(width,2));
+        //volume of cube
+        var volumeCube = Math.round(Math.pow(width,3));
+        //DIFFFERENCES
+        var fractionSphere = Math.round(volumeSphere/volumeCube);
+        var fractionCube = Math.round(volumeCube/volumeSphere);
+        var differenceBoth = Math.round(Math.abs(fractionSphere-fractionCube));
+        
+        //ANSWERS
+        //answer:circle
+        document.write("Your circle with a radius of " + radius + " would have a circumference of " + circumference + ", an area of " + areaCircle + ", a surface of " + surfaceSphere + " and a volume of " + volumeSphere + ".")
+        document.write("<br>");
+        //answer:square
+        document.write("Your square with a width of " + width + " would have a perimeter of " + perimeter + ", an area of " + areaSquare + ", a surface of " + surfaceCube + " and a volume of " + volumeCube + ".");
+        document.write("<br>");
+        //answer: difference of fractions
+        document.write("The difference between a fraction of sphere and cube will be " + differenceBoth + ".");
+        
+    </script>
+
+</body>
+</html>

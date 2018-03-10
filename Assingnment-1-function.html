@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- HANNA CHOI, Section: TRLM 8638 A -->
+    <title>Assingment01-Hanna-Function</title>
+    <script>
+        //Object: Radius
+        function Radius(){
+            //^^ when you CAP means this is function for object
+            this.radius = 0;
+            this.circumference = getCircumference;
+            this.area = getArea;
+            this.surface = getSurface;
+            this.volume = getVolume;
+        }
+        function getCircumference (){
+            return this.radius * 2 * pi;
+        }
+        function getArea (){
+            return pi*Math.pow(this.radius,2);
+        }        
+        function getCircumference (){
+            return 2*pi*this.radius;
+        }
+        function getSurface (){
+            return 4*pi*Math.pow(this.radius,2);
+        }
+        function getVolume (){
+            return (3/4)*pi*Math.pow(this.radius,3);
+        }
+        
+        //Object: Width
+        function Width(){
+            this.width = 0;
+            this.perimeter = getPerimeter;
+            this.areaSquare = getAreaSquare;
+            this.surfacecube = getSurfaceCube;
+            this.volumecube = getVolumeCube;
+            
+        }
+        function getPerimeter (){
+            return 4*this.width;
+        }
+        function getAreaSquare (){
+            return Math.pow(this.width,2);
+        }
+        function getSurfaceCube (){
+           return 6 * Math.pow(this.width,2);
+        }
+        function getVolumeCube (){
+            return Math.pow(this.width,3);
+        } 
+        
+        //FUNCTIONS
+        function getName (){
+            var firstName = prompt("What is your first name?");
+            var lastName = prompt("What is your last name?");
+            var greetings = firstName + (" ") + lastName; 
+            alert("Nice to meet you, " + greetings + "!");
+            
+        }
+        
+        function getRadius(){
+            var circle = new Radius();
+            var rQuestion = prompt("Can you give the radius of a circle?");
+            circle.radius = rQuestion;
+            
+            document.write("Your circle with a radius of " + circle.radius + " would have a circumference of " + circle.circumference().toFixed(2) + ", an area of " + circle.area().toFixed(2) + ", a surface of " + circle.surface().toFixed(2) + " and a volume of " + circle.volume().toFixed(2) + ".")
+            document.write("<br>");
+        }
+        
+        function getWidth (){
+            var sQuare = new Width();
+            var sQuestion = prompt("Can you give the width of a square?");
+            sQuare.width = sQuestion;
+            
+            document.write("Your square with a width of " + sQuare.width + " would have a perimeter of " + sQuare.perimeter() + ", an area of " + sQuare.areaSquare() + ", a surface of " + sQuare.surfacecube() + " and a volume of " + sQuare.volumecube() + ".")
+        }
+    </script>
+</head>
+    
+<body>
+    
+    <script>
+        pi = 3.1415;//global variable
+        getName();
+        getRadius();
+        getWidth();
+    </script>
+
+</body>
+</html>

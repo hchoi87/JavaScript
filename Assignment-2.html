@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- HANNA CHOI, Section: TRLM 8638 A -->
+<title>Assingment02</title>
+    <script>
+//Deal/shuffle suits
+ function shuffleSuit(){
+    var digit = Math.round(Math.random() * 4)+1;
+        switch(digit){
+            case 0 : return "♠"; break;
+            case 1 : return "♥"; break;
+            case 2 : return "♦"; break;
+            case 3 : return "♣"; break;
+        } return digit;
+    }
+function shuffleValue(){
+    var digit = Math.round(Math.random() * 13)+1;
+        switch(digit){
+            case 0 : return "A"; break;
+            case 1 : return "2"; break;
+            case 2 : return "3"; break;
+            case 3 : return "4"; break;
+            case 4 : return "5"; break;
+            case 5 : return "6"; break;
+            case 6 : return "7"; break;
+            case 7 : return "8"; break;
+            case 8 : return "9"; break;
+            case 9 : return "10"; break;
+            case 10 : return "J"; break;
+            case 11 : return "Q"; break;
+            case 12 : return "K"; break; 
+        } return digit; 
+}
+
+function dealCards(NofCards, NofPlayers){
+    var dealCardsNow = "";
+    var totals = [];
+    for (i = 0; i < NofCards * NofPlayers; i++){
+        do {
+            totals [i] = shuffleValue() + " of " + shuffleSuit();
+            var found = dealCardsNow.indexOf(totals[i]);
+        }while (found != -1)
+            dealCardsNow += totals[i] + "<br>";
+    }
+    return totals;
+}    
+function dealPlayers (allcards, start, end){
+    var dealCardNow = "";
+    var totals = [];
+    for (i = start; i < end; i++){
+        dealCardNow += allcards[i] + "<br>";
+    }
+    return dealCardNow;
+}        
+    </script>
+    
+</head>
+   
+    <body>
+        <p>Player A</p>
+        <p id="cards4you"></p>
+        <p>Player B</p>
+        <p id="cards4me"></p>
+        
+        <script>
+            var allDealtCards = dealCards(5, 2);
+            document.getElementById("cards4you").innerHTML = dealPlayers(allDealtCards, 0, 5);
+            document.getElementById("cards4me").innerHTML = dealPlayers(allDealtCards, 5, 10);
+        
+        </script>
+    </body>    
+    
+    
+    
+    
+</html>
+    

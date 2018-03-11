@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Extra_credit_foodOrder</title>
+    <script>
+      function spitOut(inArray){
+            var output = "";
+            for ( i = 0 ; i < inArray.length ; i++){
+                output += inArray[i] + " ";
+            }
+            document.getElementById("yourOrder").innerHTML = output + "<br>";
+        }
+       
+        function addFood(food) {
+          foodList.push(food);
+        }
+        function removeFood(food) {
+          var i = foodList.indexOf(food);
+          if (i > -1) {foodList.splice(i, 1);}
+            else{alert(food + ' cannot be removed, as it is not present in the array of fruits.');}
+        }
+        function selectedFood() {
+          return document.getElementById('food-select').value;
+        }
+        function updateOutput() {
+          document.getElementById('yourList').innerHTML = foodList.join("<br />") ;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+         var foodList = ["Dumpling", " Kimchi"," Fish Taco"," Hamburger"];
+                spitOut(foodList);
+
+    </script>
+    <h2>Your order includes: </h2><br>
+    <p id="yourOrder"></p>
+    <p>Enter food: <input type="text" id="food-select" value=""/></p>
+    <button onclick="addFood(selectedFood());updateOutput();">Add</button>
+    <button onclick="removeFood(selectedFood());updateOutput();">Remove</button>
+    <p id="yourList"></p>
+</body>
+</html>
